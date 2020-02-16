@@ -5,4 +5,4 @@
 ## Course 1 Algo_toolbox
     week1_programming_challenges: completed
     week2_algorithmic_warmup: completed 6/8
-    week3_greedy_algoritms: in progress
+    week3_greedy_algoritms: in progress 1/7
