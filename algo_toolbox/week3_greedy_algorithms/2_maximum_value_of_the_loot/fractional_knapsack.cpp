@@ -38,33 +38,46 @@ double get_optimal_value(double capacity, vector<int> weights, vector<int> value
       double tempWeight = weights[0]; 
       int c  = 0;
       for(int i = 1; i < values.size(); i++){
-        if(tempWeight == 0)
-          tempWeight = INT8_MIN;
-        if(weights[i] > 0)  
-        if(tempValue / tempWeight < values[i] / weights[i]){
+        if(tempWeight == 0 )
+          {
+            tempWeight = -1000;
+            tempValue = 1;
+            
+          }        
+        if(weights[i] == 0)
+        {
+          weights[i] == -1000;
+          values[i] == 1;
+        }  
+        if(weights[i] > 0)  {
+          if(tempValue / tempWeight < values[i] / weights[i]){
           tempValue = values[i];    
           tempWeight = weights[i];
           c = i;
+          }
         }
-      
+    
       }
       
-      values[c] = INT8_MIN;
-      weights[c] = INT8_MIN;
+      values[c] = 0;
+      weights[c] = 0;
 
       if(tempWeight > 0)
+      {
       if(capacity > tempWeight){
         value += tempValue;
         capacity = capacity - tempWeight;
       }
       else
       {
-        value += (double) capacity * (tempValue / tempWeight);
+        value += capacity * (tempValue / tempWeight);
         capacity = 0;
+        break;
+      }
       }
       k++;
     }
-
+    
   return value;
 }
 
