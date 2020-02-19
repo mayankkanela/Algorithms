@@ -60,8 +60,13 @@ int compute_min_refills(int dist, int tank, vector<int> & stops) {
              num_refil = num_refil + 1;
         }
     }
-    
-   return num_refil;
+    if(dist - (stops[current_refil] + tank ) <= 0 )
+    return num_refil;
+    else
+    {
+        return -1;
+    }
+   
 }
 
 
