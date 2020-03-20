@@ -5,7 +5,7 @@
 using std::vector;
 
 int binary_search(const vector<int> &a, int x) {
-  int left = 0, right = (int)a.size(); 
+  int left = 0, right = (int)a.size() - 1; 
   //write your code here
   int mid = (left + right) / 2;
   while (left <= right)
